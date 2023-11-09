@@ -1,14 +1,18 @@
+import { Route, Routes } from 'react-router-dom';
+import AllMeetupsPage from './pages/AllMeetups';
+import NewMeetupPage from './pages/NewMeetup';
+import FavoritePage from './pages/Favorites';
+import Layout from './components/layout/Layout';
+
 function App() {
   return (
-    <div>
-      <h1> My Todos </h1>
-      <div className="card">
-        <h2> Title </h2>
-        <div className="actions">
-          <button className="btn"> Delete </button>
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" exact element={<AllMeetupsPage />} />
+        <Route path="/new-meetup" element={<NewMeetupPage />} />
+        <Route path="/favorites" element={<FavoritePage />} />
+      </Routes>
+    </Layout>
   );
 }
 
